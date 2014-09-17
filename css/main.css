@@ -1,0 +1,36 @@
+body {
+	font-family: 'century gothic', 'comic sans ms', tahoma, sans-serif;
+	margin: 20px 50px;
+}
+
+header {
+	padding: 40px;
+	background-color: #DB5A6B;
+}
+
+a {
+	font-family: 'comic sans ms', tahoma, sans-serif;
+	text-decoration: none;
+}
+
+nav {
+	float: right;
+}
+
+#warning {
+	text-align: center;
+	color: red;
+}
+
+#article {
+	max-width: 70%; 
+	margin: 20px auto;
+	background-color: rgba(90,10,180, .4);
+	padding: 2%;
+	text-align: center;
+	border: 1.5px solid #875F9A;
+	border-radius: 20px;
+	overflow: auto;
+}
+
+
