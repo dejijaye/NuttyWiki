@@ -1,0 +1,191 @@
+body {
+  background: url(../images/polyester_lite.png) repeat;
+  background-color: grey;
+  margin: 0;
+}
+
+header {
+  padding: 30px;
+  background-image: linear-gradient(to top, #EEB422 10%,#FFFFFF );
+  text-align: center;
+  display: block;
+}
+
+#logo {
+  color: #4c3100;
+  font-family: verdana;
+  font-size: 2em;
+  margin-right: 6%;
+  text-decoration: none;
+}
+
+#logo:hover {
+  color: #4c2200;
+  font-size: 2.1em;
+}
+
+header nav {
+  margin: 20px;
+}
+
+#result {
+  max-width: 45%;
+  margin: 40px auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+#bookCover {
+  float:left;
+}
+
+#bookCover a img {
+  padding: 5px;
+  max-height: 150px;
+}
+
+#bookCover a {
+  text-decoration: none;
+}
+
+#bookCover p {
+  color: #6C7A89;
+  font-family: 'comic sans ms', sans-serif
+}
+
+#warning {
+  text-align: center;
+  color: red;
+  font-family: 'impact';
+}
+
+#entry {
+  text-transform: capitalize;
+  color: #cc8400;
+  font-family: 'century gothic', comic sans ms, sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  display: none;
+}
+
+#bookContainer {
+  margin: 60px auto 60px;
+  max-width: 70%;
+  overflow: hidden;
+}
+
+#bookContainer h1 {
+  font-size: 1.5em;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+#welcome {
+  font-family: 'century gothic', comic sans ms, sans-serif;
+}
+
+#article { 
+  font-family: 'century gothic', comic sans ms, sans-serif;
+  display: none;
+}
+
+#articleText {
+  background-color: #CD8500; 
+  padding: 10px;
+}
+
+#more {
+  font-size: .8em;
+  font-family: 'century gothic', sans-serif;
+  display: none;
+}
+
+footer {
+  font-family: 'century gothic', sans-serif;
+  text-align: center;
+  min-width: 100%;
+}
+
+footer p {
+  font-family: 'century gothic', sans-serif;
+}
+
+#searchbar {
+    text-transform: capitalize;
+    width: 50%;
+    text-align: center;
+    height: 30px;
+    border: 2px solid #FF6103;
+    border-radius: 20px;
+}
+
+#searchbar:hover, #searchbar:focus {
+  outline-style: none;
+  border: 2px solid #CD9B1D;
+  border-radius: 20px;
+}
+
+#searchbtn {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: orange;
+  color: white;
+}
+
+#searchbtn:hover {
+  background-color: #FFD700;
+  color: #CD950C;
+}
+
+/******************************
+ PRELOADER ANIMATION
+******************************/
+
+.spinner {
+  width: 100px;
+  height: 100px;
+  display: none;
+  position: absolute;
+}
+
+.spinner {
+  margin: 60px 18% 20px;
+}
+
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: orange;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
