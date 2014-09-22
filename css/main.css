@@ -30,21 +30,30 @@ header nav {
 
 #result {
   max-width: 45%;
-  margin: 5%;
-  margin-left: 3%;
-  float: left;
+  margin: 40px auto;
 }
 
-/*#tS2 {
-  padding: 10px;
+h1 {
   text-align: center;
-  max-width: 40%;
-  margin-top: 8%;
-  height: 400px;
-  float: right;
-  margin-right: 4%;
-/*  overflow: auto;*/
-}*/
+}
+
+#bookCover {
+  float:left;
+}
+
+#bookCover a img {
+  padding: 5px;
+  max-height: 150px;
+}
+
+#bookCover a {
+  text-decoration: none;
+}
+
+#bookCover p {
+  color: #6C7A89;
+  font-family: 'comic sans ms', sans-serif
+}
 
 #warning {
   text-align: center;
@@ -61,6 +70,22 @@ header nav {
   display: none;
 }
 
+#bookContainer {
+  margin: 60px auto 60px;
+  max-width: 70%;
+  overflow: hidden;
+}
+
+#bookContainer h1 {
+  font-size: 1.5em;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+#welcome {
+  font-family: 'century gothic', comic sans ms, sans-serif;
+}
+
 #article { 
   font-family: 'century gothic', comic sans ms, sans-serif;
   display: none;
@@ -69,6 +94,22 @@ header nav {
 #articleText {
   background-color: #CD8500; 
   padding: 10px;
+}
+
+#more {
+  font-size: .8em;
+  font-family: 'century gothic', sans-serif;
+  display: none;
+}
+
+footer {
+  font-family: 'century gothic', sans-serif;
+  text-align: center;
+  min-width: 100%;
+}
+
+footer p {
+  font-family: 'century gothic', sans-serif;
 }
 
 #searchbar {
@@ -103,19 +144,15 @@ header nav {
  PRELOADER ANIMATION
 ******************************/
 
-.spinner, .spinner1 {
+.spinner {
   width: 100px;
   height: 100px;
   display: none;
-  position: relative;
+  position: absolute;
 }
 
 .spinner {
-  margin: 200px;
-}
-
-.spinner1 {
-  margin: 157px;
+  margin: 60px 18% 20px;
 }
 
 

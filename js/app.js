@@ -11,6 +11,7 @@ var wikiSearch = {
 	// method that performs all the other actions
 	init: function ()
 	{
+		wikiSearch.bookLoad();
 		wikiSearch.getEntry();
 	},
 
@@ -32,8 +33,9 @@ var wikiSearch = {
 			entry = entry.trim();
 			if(entry.length > 1)
 			{
+				$("#welcome").empty();
 				$("#article").empty();
-				$(".jTscroller").empty();
+				$("#flexiselDemo1").empty();
 				$(".spinner").show();
 				$(".spinner1").show();	
 				$("#warning").hide();
@@ -52,7 +54,8 @@ var wikiSearch = {
 	{
 		$.getJSON(wikiSearch.wbase+"action=parse&format=json&prop=text&section=0&page=" + entry + "&redirects&callback=?", function(data)
 		{
-			console.log(data);
+			var more = "http://en.wikipedia.org/wiki/"+entry;
+			$("#more a").attr({href: more, target:"_blank"});
 			if (!data.error)
 			{
 				var markup = data.parse.text["*"];
@@ -80,6 +83,7 @@ var wikiSearch = {
 			$(".spinner").hide();
 		});
 		$("#article").show();
+		$("#more").show();
 	},
  
 
@@ -89,12 +93,22 @@ var wikiSearch = {
 		wikiSearch.params.q = bookname;
 		$.getJSON(wikiSearch.gbase, wikiSearch.params, function (response) 
 		{
-			console.log(response);
+			// console.log(response);
 
 			wikiSearch.loadBooks(response);
 		} )
 	},
 
+
+	bookLoad: function () {
+		wikiSearch.params.q = "love";
+		$.getJSON(wikiSearch.gbase, wikiSearch.params, function (response) 
+		{
+			// console.log(response);
+
+			wikiSearch.loadBooks(response);
+		})
+	},
 
 	//method that loads the books into the html page
 	loadBooks: function (response) 
@@ -105,23 +119,26 @@ var wikiSearch = {
 			// $("#bookDisplay").append('<h1>'+ "No Result Found" + '</h1>');
 		}
 
+		console.log(response);
+
 		$.each(response.items, function ()
 		{
-			console.log(this.volumeInfo.authors);
+			// console.log(this.volumeInfo.authors);
 			var title = this.volumeInfo.title;
 			var author = this.volumeInfo.authors;
 			var image_url = this.volumeInfo.imageLinks.thumbnail;
 			var bookID = this.id;
+			var postDiv = ""
 
 			if (typeof ratings === 'undefined')
 			{
 				var ratings = "Not Available";
 			}
-			var postDiv = '<a href="#"><img src="' + image_url +'"/></a>';
-			$(".jTscroller").append(postDiv);
-			$(".spinner1").hide();
+			postDiv = '<li id="bookCover"><a href="#"><img src="' + image_url +'"/><p>' + title +'</p></a></li>';
+			$("#flexiselDemo1").append(postDiv);
+			//$(".spinner1").hide();
 		})	
-	},
+	}
 }
 
 $(document).ready( function(){

@@ -2,15 +2,20 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="author" content="Ayodeji Jayeoba">
 	<meta name="description" content="A word and book search site">
 	<title>Nutty Wiki | Nutty Version 1.0</title>
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<link href="css/jquery.thumbnailScroller.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui-1.8.13.custom.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+	<script type="text/javascript" src="js/app.js"
+	></script>
 </head>
 <body>
 	<header>
@@ -22,52 +27,38 @@
 			<input type="button" value="search" id="searchbtn">
 		</nav>
 	</header>
+	<div id="bookContainer">
+		<h1>Recommended Reading</h1>
+		<div>
+			<ul id="flexiselDemo1">
+			</ul>
+		</div>
+	</div>
 	<div id="result">
 		<p id="warning"></p>
 		<p id="entry"></p>
-		<div id="article">	
+		<div id="welcome"><p>This page is meant to be a quick reference for students to quickly look up all sorts of stuffs and get a brief description and recommended books to read more. So incase you need to look up "Solar System" and find books that speak on the subject matter, Nutty wiki is the right app for you...</p></div>
+		<div id="article">
 		</div>
+		<div id="more"><p><a href="">Click here</a> to read more.</p></div>	
 		<div class="spinner">
       		<div class="double-bounce1"></div>
       		<div class="double-bounce2"></div>
     	</div>
 	</div>
-	<div id="tS3" class="jThumbnailScroller">
-    <div class="jTscrollerContainer">
-        <div class="jTscroller">
-            
-        </div>
-    </div>
-    <a href="#" class="jTscrollerPrevButton"></a>
-    <a href="#" class="jTscrollerNextButton"></a>
-</div>
 	<footer>
+		<p>&copy 2014 Ayodeji Jayeoba</p>
 	</footer>
 	<script type="text/javascript">
-			(function($){
-			window.onload=function(){
-			    $("#tS3").thumbnailScroller({
-			        scrollerType:"hoverPrecise",
-			        scrollerOrientation:"vertical",
-			        scrollSpeed:2,
-			        scrollEasing:"easeOutCirc",
-			        scrollEasingAmount:800,
-			        acceleration:4,
-			        scrollSpeed:800,
-			        noScrollCenterSpace:10,
-			        autoScrolling:0,
-			        autoScrollingSpeed:2000,
-			        autoScrollingEasing:"easeInOutQuad",
-			        autoScrollingDelay:500
-			    });
-			}
-			})(jQuery);
+	$(window).load(function ()
+	{
+
+		$("#flexiselDemo1").flexisel
+		({
+			visibleItems: 3
+		});
+	});
+
 	</script>
-	<script type="text/javascript" src="js/jquery.thumbnailScroller.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
-<!-- <div class="spinner1">
-      		<div class="double-bounce1"></div>
-      		<div class="double-bounce2"></div>
-    	</div> -->
