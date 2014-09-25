@@ -8,8 +8,8 @@
 	<meta name="description" content="A word and book search site">
 	<title>Nutty Wiki | Nutty Version 1.0</title>
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/reset.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
 	<script src="js/jquery-1.9.1.min.js"></script>
@@ -55,7 +55,37 @@
 
 		$("#flexiselDemo1").flexisel
 		({
-			visibleItems: 3
+			visibleItems: 3,
+			autoPlay: true,
+			autoPlaySpeed: 2000,
+			pauseOnHover: true,
+			enableResponsiveBreakpoints: true,
+			responsiveBreakpoints: 
+			{
+				portrait:
+				{
+					changePoints: 480,
+					visibleItems: 1
+				},
+
+				landscape:
+				{
+					changePoints: 640,
+					visibleItems: 1
+				},
+
+				tablet: 
+				{
+					changePoints: 768,
+					visibleItems: 1
+				},
+
+				mobile:
+				{
+					changePoints: 320,
+					visibleItems: 1
+				}
+			}
 		});
 	});
 

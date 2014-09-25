@@ -43,7 +43,7 @@ h1 {
 
 #bookCover a img {
   padding: 5px;
-  max-height: 150px;
+  height: 150px;
 }
 
 #bookCover a {
@@ -52,7 +52,14 @@ h1 {
 
 #bookCover p {
   color: #6C7A89;
-  font-family: 'comic sans ms', sans-serif
+  font-family: 'comic sans ms', sans-serif;
+  font-size: 0.8em;
+  color: white;
+  background-color: darkorange;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
 }
 
 #warning {
@@ -145,8 +152,8 @@ footer p {
 ******************************/
 
 .spinner {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   display: none;
   position: absolute;
 }

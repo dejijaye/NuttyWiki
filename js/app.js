@@ -73,6 +73,7 @@ var wikiSearch = {
 		            // remove cite error
 		            blurb.find('.mw-ext-cite-error').remove();
 		            $('#article').html($(blurb).find('p'));
+		            // $("#article").html($("#more").show());
 					// console.log(markup);
 				}
 			}
@@ -82,8 +83,8 @@ var wikiSearch = {
 			}
 			$(".spinner").hide();
 		});
-		$("#article").show();
-		$("#more").show();
+		$("#article").html($("#more").show()).show();
+		// $("#more").show();
 	},
  
 
@@ -101,7 +102,7 @@ var wikiSearch = {
 
 
 	bookLoad: function () {
-		wikiSearch.params.q = "love";
+		wikiSearch.params.q = "sex";
 		$.getJSON(wikiSearch.gbase, wikiSearch.params, function (response) 
 		{
 			// console.log(response);
@@ -134,7 +135,7 @@ var wikiSearch = {
 			{
 				var ratings = "Not Available";
 			}
-			postDiv = '<li id="bookCover"><a href="#"><img src="' + image_url +'"/><p>' + title +'</p></a></li>';
+			postDiv = '<li id="bookCover"><a href="#"><img src="' + image_url +'"/><p class="title">' + title +'</p></a></li>';
 			$("#flexiselDemo1").append(postDiv);
 			//$(".spinner1").hide();
 		})	

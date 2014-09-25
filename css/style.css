@@ -48,7 +48,7 @@ display:none;
 }
 
 .nbs-flexisel-item {
-    float:left;
+    /*float:left;*/
     margin:0px;
     padding:0px;
     cursor:pointer;
@@ -72,7 +72,6 @@ display:none;
     width: 22px;
     height: 22px; 
     position: absolute;
-
     cursor: pointer;
     z-index: 100;
     opacity: 0.5;
@@ -80,10 +79,12 @@ display:none;
 
 .nbs-flexisel-nav-left {
     left: 10px;
+    top: 90px;
     background: url(../images/button-previous.png) no-repeat;
 }
 
 .nbs-flexisel-nav-right {
     right: 5px;
+    top: 90px;
     background: url(../images/button-next.png) no-repeat;
 }
