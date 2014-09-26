@@ -48,7 +48,7 @@ display:none;
 }
 
 .nbs-flexisel-item {
-    /*float:left;*/
+    float:left;
     margin:0px;
     padding:0px;
     cursor:pointer;
