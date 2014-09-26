@@ -157,12 +157,12 @@
 
                 });
                 $(leftArrow).on("click", function(event) {
-                    methods.scrollLeft();
-                });
-                $(rightArrow).on("click", function(event) {
                     methods.scrollRight();
                 });
-                if (settings.pauseOnHover == true) {
+                $(rightArrow).on("click", function(event) {
+                    methods.scrollLeft();
+                });
+                if (settings.pauseOnHover === true) {
                     $(".nbs-flexisel-item").on({
                         mouseenter : function() {
                             canNavigate = false;

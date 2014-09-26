@@ -102,7 +102,7 @@ var wikiSearch = {
 
 
 	bookLoad: function () {
-		wikiSearch.params.q = "sex";
+		wikiSearch.params.q = "comic";
 		$.getJSON(wikiSearch.gbase, wikiSearch.params, function (response) 
 		{
 			// console.log(response);
@@ -128,14 +128,14 @@ var wikiSearch = {
 			var title = this.volumeInfo.title;
 			var author = this.volumeInfo.authors;
 			var image_url = this.volumeInfo.imageLinks.thumbnail;
-			var bookID = this.id;
+			var link = this.volumeInfo.canonicalVolumeLink;
 			var postDiv = ""
 
 			if (typeof ratings === 'undefined')
 			{
 				var ratings = "Not Available";
 			}
-			postDiv = '<li id="bookCover"><a href="#"><img src="' + image_url +'"/><p class="title">' + title +'</p></a></li>';
+			postDiv = '<li id="bookCover"><a href="' + link +'" target="_blank"><img src="' + image_url +'"/><p class="title">' + title +'</p></a></li>';
 			$("#flexiselDemo3").append(postDiv);
 			//$(".spinner1").hide();
 		})	
