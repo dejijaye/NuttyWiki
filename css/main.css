@@ -106,13 +106,16 @@ h1 {
 #more {
   font-size: .8em;
   font-family: 'century gothic', sans-serif;
-  display: none;
+  /*display: none;*/
 }
 
 footer {
+  position: relative;
+  bottom: 0;
   font-family: 'century gothic', sans-serif;
   text-align: center;
   min-width: 100%;
+  margin-top: 200px;
 }
 
 footer p {
@@ -156,9 +159,6 @@ footer p {
   height: 50px;
   display: none;
   position: absolute;
-}
-
-.spinner {
   margin: 60px 18% 20px;
 }
 

@@ -30,7 +30,7 @@
 	<div id="bookContainer">
 		<h1>Recommended Reading</h1>
 		<div>
-			<ul id="flexiselDemo1">
+			<ul id="flexiselDemo3">
 			</ul>
 		</div>
 	</div>
@@ -40,7 +40,7 @@
 		<div id="welcome"><p>This page is meant to be a quick reference for students to quickly look up all sorts of stuffs and get a brief description and recommended books to read more. So incase you need to look up "Solar System" and find books that speak on the subject matter, Nutty wiki is the right app for you...</p></div>
 		<div id="article">
 		</div>
-		<div id="more"><p><a href="">Click here</a> to read more.</p></div>	
+		
 		<div class="spinner">
       		<div class="double-bounce1"></div>
       		<div class="double-bounce2"></div>
@@ -52,12 +52,12 @@
 	<script type="text/javascript">
 	$(window).load(function ()
 	{
-
-		$("#flexiselDemo1").flexisel
+		$("#flexiselDemo3").flexisel
 		({
 			visibleItems: 3,
+			animationSpeed: 1000,
 			autoPlay: true,
-			autoPlaySpeed: 2000,
+			autoPlaySpeed: 3000,
 			pauseOnHover: true,
 			enableResponsiveBreakpoints: true,
 			responsiveBreakpoints: 
@@ -85,6 +85,7 @@
 					changePoints: 320,
 					visibleItems: 1
 				}
+
 			}
 		});
 	});

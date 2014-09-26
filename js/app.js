@@ -33,18 +33,13 @@ var wikiSearch = {
 			entry = entry.trim();
 			if(entry.length > 1)
 			{
-				$("#welcome").empty();
-				$("#article").empty();
-				$("#flexiselDemo1").empty();
-				$(".spinner").show();
-				$(".spinner1").show();	
-				$("#warning").hide();
-				$("#entry").hide();
+				wikiSearch.displayObjects();
 				wikiSearch.searchEntry(entry);
 				wikiSearch.searchBooks(entry);
 				return;
 			}
 		}
+		$("#welcome").empty();
 		$("#warning").text("Please enter a valid search query");
 	},
 
@@ -52,10 +47,11 @@ var wikiSearch = {
 	//method that perfoms the search from wikipedia
 	searchEntry: function (entry)
 	{
+		var linker = "http://en.wikipedia.org/wiki/"+entry;
+		var link = $('<div id="more"><p><a href="'+ linker +'" target="_blank">Click here</a> to read more.</p></div>');
 		$.getJSON(wikiSearch.wbase+"action=parse&format=json&prop=text&section=0&page=" + entry + "&redirects&callback=?", function(data)
-		{
-			var more = "http://en.wikipedia.org/wiki/"+entry;
-			$("#more a").attr({href: more, target:"_blank"});
+		{	
+			
 			if (!data.error)
 			{
 				var markup = data.parse.text["*"];
@@ -73,7 +69,8 @@ var wikiSearch = {
 		            // remove cite error
 		            blurb.find('.mw-ext-cite-error').remove();
 		            $('#article').html($(blurb).find('p'));
-		            // $("#article").html($("#more").show());
+
+		            $("#article").append(link);
 					// console.log(markup);
 				}
 			}
@@ -83,8 +80,11 @@ var wikiSearch = {
 			}
 			$(".spinner").hide();
 		});
-		$("#article").html($("#more").show()).show();
-		// $("#more").show();
+		$("#article").show();
+		// if($("#article").show())
+		// {
+		// 	wikiSearch.showMore();
+		// }
 	},
  
 
@@ -136,9 +136,25 @@ var wikiSearch = {
 				var ratings = "Not Available";
 			}
 			postDiv = '<li id="bookCover"><a href="#"><img src="' + image_url +'"/><p class="title">' + title +'</p></a></li>';
-			$("#flexiselDemo1").append(postDiv);
+			$("#flexiselDemo3").append(postDiv);
 			//$(".spinner1").hide();
 		})	
+	},
+
+	displayObjects: function()
+	{
+		$("#welcome").empty();
+		$("#article").empty();
+		$("#flexiselDemo3").empty();
+		$(".spinner1").show();
+		$(".spinner").show();
+		$("#warning").hide();
+		$("#entry").hide();
+	},
+
+	showMore: function()
+	{
+		$("#more").show();
 	}
 }
 
