@@ -65,6 +65,13 @@ h1 {
   text-align: center;
 }
 
+#warning1 {
+  text-align: center;
+  color: red;
+  font-family: 'impact';
+  display: none;
+}
+
 #warning {
   text-align: center;
   color: red;

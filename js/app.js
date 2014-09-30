@@ -49,7 +49,7 @@ var wikiSearch = {
 	{
 		var linker = "http://en.wikipedia.org/wiki/"+entry;
 		var link = $('<div id="more"><p><a href="'+ linker +'" target="_blank">Click here</a> to read more.</p></div>');
-		$.getJSON(wikiSearch.wbase+"action=parse&format=json&prop=text&section=all&page=" + entry + "&redirects&callback=?", function(data)
+		$.getJSON(wikiSearch.wbase+"action=parse&format=json&prop=text&section=0&page=" + entry + "&redirects&callback=?", function(data)
 		{	
 			
 			if (!data.error)
@@ -116,7 +116,8 @@ var wikiSearch = {
 	{
 		if (response.totalItems < 1)
 		{
-			console.log("No Result");			
+			console.log("No Result");
+			$("#warning1").show();			
 		}
 
 		console.log(response);
@@ -130,6 +131,10 @@ var wikiSearch = {
 			var link = this.volumeInfo.canonicalVolumeLink;
 			var postDiv = ""
 
+			if(!this.volumeInfo.imageLinks.thumbnail){
+				var image_url = "/images/noimage.jpg";
+			}
+
 			if (typeof ratings === 'undefined')
 			{
 				var ratings = "Not Available";
@@ -142,6 +147,7 @@ var wikiSearch = {
 
 	displayObjects: function()
 	{
+		$("#warning1").hide();
 		$("#welcome").empty();
 		$("#article").empty();
 		$("#flexiselDemo3").empty();
